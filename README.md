@@ -1,3 +1,3 @@
 # DurHack24
 
-Super cool project for DurHack by Max Mayukhi and Oli !!!!!!!
+Super cool project for DurHack by Max, Mayukhi, and Oli !!!!!!!
