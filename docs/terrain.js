@@ -1,4 +1,5 @@
-import * as THREE from "https://cdn.skypack.dev/three@0.132.2";;
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 function main() {
     // setting up canvas
@@ -13,6 +14,7 @@ function main() {
     const far = 5;
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
     camera.position.z = 2;
+    const controls = new OrbitControls(camera,renderer.domElement);
 
     // sets up the scene
     const scene = new THREE.Scene();
@@ -48,9 +50,11 @@ function main() {
         renderer.render( scene, camera );
 
         requestAnimationFrame( render );
+        controls.update();
     }
 
     requestAnimationFrame( render );
+    controls.update();
 }
 
 main();

@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="module" src="terrain.js"></script>
-    <link rel="stylesheet" href="terrain.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.132.2/examples/jsm/"
+          }
+        }
+      </script>
+    <script type="module" src="./terrain.js"></script>
+    <link rel="stylesheet" href="./terrain.css">
     <title>Spinning Cube</title>
 </head>
 <body>
