@@ -3,6 +3,8 @@ import * as THREE from "https://cdn.skypack.dev/three@0.132.2";;
 function main() {
     // setting up canvas
     const canvas = document.querySelector('#c');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     const renderer = new THREE.WebGLRenderer({antialias: true, canvas});
     // setting up camera
     const fov = 75;
