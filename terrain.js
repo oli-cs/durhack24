@@ -12,33 +12,34 @@ function main() {
     const near = 0.1;
     const far = 5;
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-
     camera.position.z = 2;
 
+    // sets up the scene
     const scene = new THREE.Scene();
 
+    // directional light
     {
-
         const color = 0xFFFFFF;
         const intensity = 3;
         const light = new THREE.DirectionalLight( color, intensity );
         light.position.set( - 1, 2, 4 );
         scene.add( light );
-
     }
 
+    // setting up cube + dimensions
     const boxWidth = 1;
     const boxHeight = 1;
     const boxDepth = 1;
     const geometry = new THREE.BoxGeometry( boxWidth, boxHeight, boxDepth );
 
+    // cube material
     const material = new THREE.MeshPhongMaterial( { color: 0x44aa88 } ); // greenish blue
-
     const cube = new THREE.Mesh( geometry, material );
+    // adds cube to scene
     scene.add( cube );
 
+    // renders animation
     function render( time ) {
-
         time *= 0.001; // convert time to seconds
 
         cube.rotation.x = time;
@@ -47,7 +48,6 @@ function main() {
         renderer.render( scene, camera );
 
         requestAnimationFrame( render );
-
     }
 
     requestAnimationFrame( render );
