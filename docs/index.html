@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.132.2/examples/jsm/"
+          }
+        }
+      </script>
+    <script type="module" src="./voxels.js"></script>
+    <link rel="stylesheet" href="./terrain.css">
+    <link rel="icon" type="image/x-icon" href="/assets/still_cube.png">
+    <title>Spinning Cube</title>
+</head>
+<body>
+    <h1>Spinning Cube</h1>
+
+    <div id="info">
+        <h3><u>Spinning Cube</u></h3>
+        <p>i love spinning cube !!</p>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <table style="width:100%">
+            <tr>
+              <td id="live_reaction"><p>live cube <br> reaction:</p></td>
+              <td><video autoplay loop muted width="100" height="100" src="/assets/spinning_cube.mov" id="spinning_cube">spinning cube</video></td>
+            </tr>
+        </table>
+
+    </div>
+    
+    <button id="mybutton">button!! :)</button>
+
+    <div id="text1"><p>slider 1:</p></div>
+    <div id="text2"><p>slider 2:</p></div>
+
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+
+    <button id="mybutton2">load</button>
+    <button id="mybutton3">save</button>
+
+    <canvas id="c"></canvas>
+</body>
+</html>
