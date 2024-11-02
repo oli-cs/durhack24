@@ -157,11 +157,11 @@ VoxelWorld.faces = [
 
 function main() {
     const canvas = document.querySelector( '#c' );
-    //canvas.width = window.innerWidth;
-    //canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     const renderer = new THREE.WebGLRenderer( { antialias: true, canvas } );
 
-    const cellSize = 32;
+    const cellSize = 200;
 
     const fov = 75;
     const aspect = 2; // the canvas default
@@ -175,7 +175,7 @@ function main() {
     controls.update();
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color( 'lightblue' );
+    //scene.background = new THREE.Color( 'lightblue' );
 
     function addLight( x, y, z ) {
         const color = 0xFFFFFF;
