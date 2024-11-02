@@ -11,6 +11,7 @@ h1 {
 	z-index: 100;
 	display:block;
     color: white;
+    font-family: 'Nasa', sans-serif;
 }
 
 #info {
