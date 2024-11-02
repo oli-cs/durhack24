@@ -2,3 +2,111 @@ body {
     margin: 0;
     overflow-y: hidden;
 }
+
+h1 {
+    position: absolute;
+	top: 10px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+	display:block;
+    color: white;
+}
+
+#info {
+    height: 200px;
+    width: 250px;
+    position: absolute;
+	text-align: center;
+	top: 10px;
+    left: 10px;
+	z-index: 100;
+	display:block;
+    background-color: whitesmoke;
+    opacity: 0.8;
+}
+
+#mybutton {
+    height: 100px;
+    width: 200px;
+    font-size: 30px;
+    position: absolute;
+	bottom: 30px;
+    left: 10px;
+    display:block;
+    z-index: 265;
+}
+
+#text1 {
+    height: 30px;
+    width: 150px;
+    position: absolute;
+	text-align: center;
+    line-height: 0px; 
+	bottom: 90px;
+    left: 230px;
+	z-index: 100;
+	display:block;
+    background-color: whitesmoke;
+}
+
+#text2 {
+    height: 30px;
+    width: 150px;
+    position: absolute;
+	text-align: center;
+    line-height: 0px; 
+	bottom: 40px;
+    left: 230px;
+	z-index: 100;
+	display:block;
+    background-color: whitesmoke;
+}
+
+#myRange {
+    height: 100px;
+    width: 750px;
+    position: absolute;
+	bottom: 5px;
+    left: 400px;
+    display:block;
+    z-index: 265;
+}
+
+#myRange2 {
+    height: 100px;
+    width: 750px;
+    position: absolute;
+	bottom: 55px;
+    left: 400px;
+    display:block;
+    z-index: 265;
+}
+
+#mybutton2 {
+    height: 100px;
+    width: 100px;
+    font-size: 20px;
+    position: absolute;
+	bottom: 30px;
+    right: 140px;
+    display:block;
+    z-index: 265;
+}
+
+#mybutton3 {
+    height: 100px;
+    width: 100px;
+    font-size: 20px;
+    position: absolute;
+	bottom: 30px;
+    right: 20px;
+    display:block;
+    z-index: 265;
+}
+
+
+/* for mobile screens under 500px - to be implemented */
+@media (max-width: 500px) {
+    
+}
