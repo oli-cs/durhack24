@@ -237,8 +237,8 @@ function main() {
     const canvas = document.querySelector( '#c' );
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    const renderer = new THREE.WebGLRenderer( { antialias: true, canvas } );
-
+    const renderer = new THREE.WebGLRenderer( { antialias: true, canvas, alpha: true } );
+    renderer.setClearColor( 0x000000, 0 );
     const cellSize = 250;
     //const cellSize = 10;
 
@@ -256,7 +256,7 @@ function main() {
     const scene = new THREE.Scene();
     //scene.background = new THREE.Color( 'lightblue' );
 
-    scene.background = new THREE.TextureLoader().load("https://images.pexels.com/photos/1205301/pexels-photo-1205301.jpeg");
+    //scene.background = new THREE.TextureLoader().load("https://images.pexels.com/photos/1205301/pexels-photo-1205301.jpeg");
 
     /*const loader = new THREE.TextureLoader();
         loader.load('https://images.pexels.com/photos/1205301/pexels-photo-1205301.jpeg' , function(texture)
