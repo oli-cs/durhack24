@@ -1,4 +1,5 @@
 body {
+    height: 100%;
     margin: 0;
     overflow-y: hidden;
 }
@@ -110,3 +111,10 @@ h1 {
 @media (max-width: 500px) {
     
 }
+
+#c {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
