@@ -21,8 +21,9 @@ const permutation = [
     61, 156, 180,
 ];
 
+const shuffledPermutation = shuffleArray(permutation);
 for (let i = 0; i < 256; i++) {
-    p[256 + i] = p[i] = permutation[i];
+    p[256 + i] = p[i] = shuffledPermutation[i];
 }
 
 const fade = (t) => {
@@ -335,6 +336,17 @@ function main() {
 
     controls.addEventListener( 'change', requestRenderIfNotRequested );
     window.addEventListener( 'resize', requestRenderIfNotRequested );
+}
+
+/* Randomize array in-place using Durstenfeld shuffle algorithm */
+function shuffleArray(array) {
+    for (var i = array.length - 1; i >= 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
 }
 
 main();
