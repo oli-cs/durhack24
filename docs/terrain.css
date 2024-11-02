@@ -1,5 +1,4 @@
 body {
-    height: 100%;
     margin: 0;
     overflow-y: hidden;
 }
@@ -15,7 +14,7 @@ h1 {
 }
 
 #info {
-    height: 200px;
+    height: 300px;
     width: 250px;
     position: absolute;
 	text-align: center;
@@ -26,6 +25,20 @@ h1 {
     background-color: whitesmoke;
     opacity: 0.8;
 }
+
+#live_reaction {
+    width: 100px;
+    text-align: left;
+    margin-top: 50px;
+    padding-left: 20px;
+    z-index: -1;
+}
+
+#spinning_cube {
+    z-index: 1;
+    position: relative;
+}
+
 
 #mybutton {
     height: 100px;
@@ -111,10 +124,3 @@ h1 {
 @media (max-width: 500px) {
     
 }
-
-#c {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
