@@ -358,5 +358,14 @@ function shuffleArray(array) {
     return array;
 }
 
+function refreshButtonPress () {
+    location.reload();
+}
+
+let refreshButton = document.getElementById("refresh");
+if (refreshButton) {
+    refreshButton.addEventListener("click", refreshButtonPress);
+}
+
 main();
 
