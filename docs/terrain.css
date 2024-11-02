@@ -11,6 +11,8 @@ h1 {
 	z-index: 100;
 	display:block;
     color: white;
+    font-family: 'Nasa', sans-serif;
+    font-size: 50px;
 }
 
 #info {
@@ -24,6 +26,11 @@ h1 {
 	display:block;
     background-color: whitesmoke;
     opacity: 0.8;
+}
+
+#desc {
+    text-align: left;
+    padding-left: 10px;
 }
 
 #live_reaction {
@@ -40,7 +47,7 @@ h1 {
 }
 
 
-#mybutton {
+#refresh {
     height: 100px;
     width: 200px;
     font-size: 30px;
@@ -97,7 +104,7 @@ h1 {
     z-index: 265;
 }
 
-#mybutton2 {
+#load {
     height: 100px;
     width: 100px;
     font-size: 20px;
@@ -108,7 +115,7 @@ h1 {
     z-index: 265;
 }
 
-#mybutton3 {
+#save {
     height: 100px;
     width: 100px;
     font-size: 20px;

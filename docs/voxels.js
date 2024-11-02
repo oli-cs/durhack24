@@ -240,6 +240,7 @@ function main() {
     const renderer = new THREE.WebGLRenderer( { antialias: true, canvas } );
 
     const cellSize = 250;
+    //const cellSize = 10;
 
     const fov = 75;
     const aspect = 2; // the canvas default
@@ -356,6 +357,15 @@ function shuffleArray(array) {
         array[j] = temp;
     }
     return array;
+}
+
+function refreshButtonPress () {
+    location.reload();
+}
+
+let refreshButton = document.getElementById("refresh");
+if (refreshButton) {
+    refreshButton.addEventListener("click", refreshButtonPress);
 }
 
 main();
