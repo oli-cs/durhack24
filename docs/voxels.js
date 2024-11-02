@@ -177,11 +177,14 @@ function main() {
     const scene = new THREE.Scene();
     //scene.background = new THREE.Color( 'lightblue' );
 
-    const loader = new THREE.TextureLoader();
+    scene.background = new THREE.TextureLoader().load("https://images.pexels.com/photos/1205301/pexels-photo-1205301.jpeg");
+
+    /*const loader = new THREE.TextureLoader();
         loader.load('https://images.pexels.com/photos/1205301/pexels-photo-1205301.jpeg' , function(texture)
             {
             scene.background = texture;  
             });
+    */
 
     function addLight( x, y, z ) {
         const color = 0xFFFFFF;
