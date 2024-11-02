@@ -268,12 +268,12 @@ function main() {
     // creates the voxel world
     const world = new VoxelWorld( cellSize );
 
-    for ( let y = 0; y < cellSize; ++ y ) {
+    for ( let y = cellSize*0.2; y < cellSize; ++ y ) {
         for ( let z = 0; z < cellSize; ++ z ) {
             for ( let x = 0; x < cellSize; ++ x ) {
 
                 //const val = ImprovedNoise.noise(x/cellSize,y*10/cellSize,z*10/cellSize)
-                const height = (ImprovedNoise.noise(x*5/cellSize,0.5,z*5/cellSize) * (cellSize*0.2)) + (cellSize*0.2)
+                const height = (ImprovedNoise.noise(x*5/cellSize,0.5,z*5/cellSize) * (cellSize*0.2)) + (cellSize*0.4)
                 //const height = ( Math.sin( x / cellSize * Math.PI * 2 ) + Math.sin( z / cellSize * Math.PI * 3 ) ) * ( cellSize / 6 ) + ( cellSize / 2 );
                 // if ( val > -0.25 ) {
                 //     world.setVoxel( x, y, z, 1 );
