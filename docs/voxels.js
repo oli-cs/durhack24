@@ -177,6 +177,13 @@ function main() {
     const scene = new THREE.Scene();
     //scene.background = new THREE.Color( 'lightblue' );
 
+    /*const loader = new THREE.TextureLoader();
+        loader.load('https://images.pexels.com/photos/1205301/pexels-photo-1205301.jpeg' , function(texture)
+            {
+            scene.background = texture;  
+            });
+    */
+
     function addLight( x, y, z ) {
         const color = 0xFFFFFF;
         const intensity = 3;
@@ -254,5 +261,16 @@ function main() {
     controls.addEventListener( 'change', requestRenderIfNotRequested );
     window.addEventListener( 'resize', requestRenderIfNotRequested );
 }
+
+function background_setter () {
+    const loader = new THREE.TextureLoader();
+        loader.load('https://images.pexels.com/photos/1205301/pexels-photo-1205301.jpeg' , function(texture)
+            {
+            scene.background = texture;  
+            });
+}
+
+document.onload = background_setter();
+
 
 main();
