@@ -49,7 +49,7 @@ h1 {
 }
 
 
-#refresh {
+#generate {
     height: 100px;
     width: 200px;
     font-size: 30px;
@@ -60,12 +60,12 @@ h1 {
     z-index: 265;
 }
 
-#text1 {
+#amplitudeValue {
     height: 30px;
     width: 150px;
     position: absolute;
 	text-align: center;
-    line-height: 0px; 
+    line-height: 30px; 
 	bottom: 90px;
     left: 230px;
 	z-index: 100;
@@ -73,12 +73,12 @@ h1 {
     background-color: whitesmoke;
 }
 
-#text2 {
+#voxelDensityValue {
     height: 30px;
     width: 150px;
     position: absolute;
 	text-align: center;
-    line-height: 0px; 
+    line-height: 30px; 
 	bottom: 40px;
     left: 230px;
 	z-index: 100;
@@ -86,21 +86,21 @@ h1 {
     background-color: whitesmoke;
 }
 
-#myRange {
-    height: 100px;
+#amplitudeSlider {
+    height: 10px;
     width: 750px;
     position: absolute;
-	bottom: 5px;
+	bottom: 100px;
     left: 400px;
     display:block;
     z-index: 265;
 }
 
-#myRange2 {
-    height: 100px;
+#voxelDensitySlider {
+    height: 10px;
     width: 750px;
     position: absolute;
-	bottom: 55px;
+	bottom: 50px;
     left: 400px;
     display:block;
     z-index: 265;
