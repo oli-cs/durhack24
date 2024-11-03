@@ -233,13 +233,15 @@ VoxelWorld.faces = [
     },
 ];
 
+var voxelDensity = 250;
+
 function main() {
     const canvas = document.querySelector( '#c' );
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     const renderer = new THREE.WebGLRenderer( { antialias: true, canvas, alpha: true } );
     renderer.setClearColor( 0x000000, 0 );
-    const cellSize = 250;
+    const cellSize = voxelDensity;
     //const cellSize = 10;
 
     const fov = 75;
@@ -379,6 +381,7 @@ voxelDensitySlider.oninput = function() {
 
 //reload the page
 function generateButtonPress () {
+    voxelDensity = voxelDensitySlider.value;
     location.reload();
 }
 
