@@ -233,9 +233,13 @@ VoxelWorld.faces = [
     },
 ];
 
-var voxelDensity = 250;
-
 function main() {
+
+    if (!reloaded) {
+        amplitude = 50
+        voxelDensity = 250;
+    }
+
     const canvas = document.querySelector( '#c' );
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -361,6 +365,7 @@ function shuffleArray(array) {
     return array;
 }
 
+var amplitude;
 var amplitudeSlider = document.getElementById("amplitudeSlider");
 var amplitudeOutput = document.getElementById("amplitudeValue");
 amplitudeOutput.innerHTML = "Amplitude: " + amplitudeSlider.value;
@@ -370,6 +375,7 @@ amplitudeSlider.oninput = function() {
     amplitudeOutput.innerHTML = "Amplitude: " + this.value;
 }
 
+var voxelDensity;
 var voxelDensitySlider = document.getElementById("voxelDensitySlider");
 var voxelDensityOutput = document.getElementById("voxelDensityValue");
 voxelDensityOutput.innerHTML = "Voxel Density: " + voxelDensitySlider.value; // Display the default slider value
@@ -381,14 +387,18 @@ voxelDensitySlider.oninput = function() {
 
 //reload the page
 function generateButtonPress () {
-    voxelDensity = voxelDensitySlider.value;
-    location.reload();
+    amplitude = Number(amplitudeSlider.value);
+    voxelDensity = Number(voxelDensitySlider.value);
+    reloaded = true;
+    main();
 }
 
 let generateButton = document.getElementById("generate");
 if (generateButton) {
     generateButton.addEventListener("click", generateButtonPress);
 }
+
+var reloaded = false;
 
 main();
 
