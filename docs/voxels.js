@@ -234,12 +234,18 @@ VoxelWorld.faces = [
 ];
 
 function main() {
+
+    if (!reloaded) {
+        amplitude = 50
+        voxelDensity = 250;
+    }
+
     const canvas = document.querySelector( '#c' );
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    const renderer = new THREE.WebGLRenderer( { antialias: true, canvas } );
-
-    const cellSize = 250;
+    const renderer = new THREE.WebGLRenderer( { antialias: true, canvas, alpha: true } );
+    renderer.setClearColor( 0x000000, 0 );
+    const cellSize = voxelDensity;
     //const cellSize = 10;
 
     const fov = 75;
@@ -256,7 +262,7 @@ function main() {
     const scene = new THREE.Scene();
     //scene.background = new THREE.Color( 'lightblue' );
 
-    scene.background = new THREE.TextureLoader().load("https://images.pexels.com/photos/1205301/pexels-photo-1205301.jpeg");
+    //scene.background = new THREE.TextureLoader().load("https://images.pexels.com/photos/1205301/pexels-photo-1205301.jpeg");
 
     /*const loader = new THREE.TextureLoader();
         loader.load('https://images.pexels.com/photos/1205301/pexels-photo-1205301.jpeg' , function(texture)
@@ -359,14 +365,60 @@ function shuffleArray(array) {
     return array;
 }
 
-function refreshButtonPress () {
+var amplitude;
+var amplitudeSlider = document.getElementById("amplitudeSlider");
+var amplitudeOutput = document.getElementById("amplitudeValue");
+amplitudeOutput.innerHTML = "Amplitude: " + amplitudeSlider.value;
+
+// Update the amplitude slider value
+amplitudeSlider.oninput = function() {
+    amplitudeOutput.innerHTML = "Amplitude: " + this.value;
+}
+
+var voxelDensity;
+var voxelDensitySlider = document.getElementById("voxelDensitySlider");
+var voxelDensityOutput = document.getElementById("voxelDensityValue");
+voxelDensityOutput.innerHTML = "Voxel Density: " + voxelDensitySlider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+voxelDensitySlider.oninput = function() {
+    voxelDensityOutput.innerHTML = "Voxel Density: " + this.value;
+}
+
+//generate new terrain
+function generateButtonPress () {
+    amplitude = Number(amplitudeSlider.value);
+    voxelDensity = Number(voxelDensitySlider.value);
+    reloaded = true;
+    main();
+}
+
+//reload the page
+function reloadButtonPress () {
     location.reload();
 }
 
-let refreshButton = document.getElementById("refresh");
-if (refreshButton) {
-    refreshButton.addEventListener("click", refreshButtonPress);
+//change model colour
+function colourButtonPress () {
+    /* add implementation */
 }
+
+let generateButton = document.getElementById("generate");
+if (generateButton) {
+    generateButton.addEventListener("click", generateButtonPress);
+}
+
+let reloadButton = document.getElementById("reload");
+if (reloadButton) {
+    reloadButton.addEventListener("click", reloadButtonPress);
+}
+
+let colourButton = document.getElementById("colour");
+if (colourButton) {
+    colourButton.addEventListener("click", colourButtonPress);
+}
+
+var reloaded = false;
 
 main();
 
