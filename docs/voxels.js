@@ -415,6 +415,18 @@ function colourButtonPress () {
     main();
 }
 
+function minimiseButtonPress() {
+    if (document.getElementById("info").style.display == "none") {
+        document.getElementById("info").style.display = "block";
+        document.getElementById("credits").style.display = "block";
+        document.getElementById("minimise").innerHTML = "-";
+    } else {
+        document.getElementById("info").style.display = "none";
+        document.getElementById("credits").style.display = "none";
+        document.getElementById("minimise").innerHTML = "+";
+    }
+}
+
 let generateButton = document.getElementById("generate");
 if (generateButton) {
     generateButton.addEventListener("click", generateButtonPress);
@@ -431,6 +443,11 @@ if (reloadButton) {
 }
 
 var reloaded = false;
+
+let minimiseButton = document.getElementById("minimise");
+if (minimiseButton) {
+    minimiseButton.addEventListener("click", minimiseButtonPress);
+}
 
 main();
 

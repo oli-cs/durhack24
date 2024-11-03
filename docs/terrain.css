@@ -18,7 +18,7 @@ h1 {
 }
 
 #info {
-    height: 300px;
+    height: 350px;
     width: 250px;
     position: absolute;
 	text-align: center;
@@ -44,7 +44,7 @@ h1 {
 }
 
 #credits {
-	top: 300px;
+	top: 350px;
     left: 20px;
     position: absolute;
 	width: 250px;
@@ -58,6 +58,15 @@ h1 {
     position: relative;
 }
 
+#logo {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+	top: 10px;
+    right: 10px;
+    display:block;
+    z-index: 265;
+}
 
 #generate {
     height: 100px;
@@ -140,6 +149,15 @@ h1 {
 
 #c {
     height: 100vh;
+}
+
+#minimise {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: black;
+    font-size: 13px;
+    z-index: 1000;
 }
 
 
