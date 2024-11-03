@@ -289,7 +289,7 @@ function main() {
             for ( let x = 0; x < cellSize; ++ x ) {
 
                 //const val = ImprovedNoise.noise(x/cellSize,y*10/cellSize,z*10/cellSize)
-                const height = (ImprovedNoise.noise(x*(amplitude/10)/cellSize,0.5,z*(amplitude/10)/cellSize) * (cellSize*0.2)) + (cellSize*0.4)
+                const height = (ImprovedNoise.noise(x*(0.5,amplitude/10)/cellSize,z*(amplitude/10)/cellSize) * (cellSize*0.2)) + (cellSize*0.4)
                 //const height = ( Math.sin( x / cellSize * Math.PI * 2 ) + Math.sin( z / cellSize * Math.PI * 3 ) ) * ( cellSize / 6 ) + ( cellSize / 2 );
                 // if ( val > -0.25 ) {
                 //     world.setVoxel( x, y, z, 1 );
