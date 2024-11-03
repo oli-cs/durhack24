@@ -18,7 +18,7 @@ h1 {
 }
 
 #info {
-    height: 300px;
+    height: 350px;
     width: 250px;
     position: absolute;
 	text-align: center;
@@ -44,7 +44,7 @@ h1 {
 }
 
 #credits {
-	top: 300px;
+	top: 350px;
     left: 20px;
     position: absolute;
 	width: 250px;
