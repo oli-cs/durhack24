@@ -43,6 +43,16 @@ h1 {
     z-index: -1;
 }
 
+#credits {
+	top: 300px;
+    left: 20px;
+    position: absolute;
+	width: 250px;
+	z-index: 100;
+	display:block;
+    color: white;
+}
+
 #spinning_cube {
     z-index: 1;
     position: relative;
