@@ -401,9 +401,13 @@ function cheeseButtonPress () {
        cheese = 1;
        document.getElementById("amplitudeValue").style.display = "none";
        document.getElementById("amplitudeSlider").style.display = "none";
-       document.getElementById("amplitudeValue").style.display = "none";
+       document.getElementById("TerraSpace").innerHTML = "C h e e s e S p a c e";
+       curColour = "Yellow";
    } else {
        cheese = 0;
+       document.getElementById("amplitudeValue").style.display = "block";
+       document.getElementById("amplitudeSlider").style.display = "block";
+       document.getElementById("TerraSpace").innerHTML = "T e r r a S p a c e";
    }
    main();
 }
@@ -424,7 +428,7 @@ function reloadButtonPress () {
 var curColour = "Green";
 //change model colour
 function colourButtonPress () {
-    if (curColour == "Green") {
+    if (curColour == "Green" || curColour == "Yellow") {
         curColour = "Brown";
     } else if (curColour == "Brown") {
         curColour = "Gray";
