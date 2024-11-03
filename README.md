@@ -2,6 +2,6 @@
 
 Super cool project for DurHack by Max, Mayukhi, and Oli !!!!!!!
 
-wer gonna win
+we're gonna win
 
 yeah !!
