@@ -359,6 +359,7 @@ function shuffleArray(array) {
     return array;
 }
 
+
 function refreshButtonPress () {
     location.reload();
 }
