@@ -408,6 +408,9 @@ function cheeseButtonPress () {
        document.getElementById("amplitudeValue").style.display = "block";
        document.getElementById("amplitudeSlider").style.display = "block";
        document.getElementById("TerraSpace").innerHTML = "T e r r a S p a c e";
+       if (curColour == "Yellow") {
+           curColour = "Green";
+       }
    }
    main();
 }
