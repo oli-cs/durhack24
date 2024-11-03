@@ -359,13 +359,32 @@ function shuffleArray(array) {
     return array;
 }
 
-function refreshButtonPress () {
+var amplitudeSlider = document.getElementById("amplitudeSlider");
+var amplitudeOutput = document.getElementById("amplitudeValue");
+amplitudeOutput.innerHTML = "Amplitude: " + amplitudeSlider.value;
+
+// Update the amplitude slider value
+amplitudeSlider.oninput = function() {
+    amplitudeOutput.innerHTML = "Amplitude: " + this.value;
+}
+
+var voxelDensitySlider = document.getElementById("voxelDensitySlider");
+var voxelDensityOutput = document.getElementById("voxelDensityValue");
+voxelDensityOutput.innerHTML = "Voxel Density: " + voxelDensitySlider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+voxelDensitySlider.oninput = function() {
+    voxelDensityOutput.innerHTML = "Voxel Density: " + this.value;
+}
+
+//reload the page
+function generateButtonPress () {
     location.reload();
 }
 
-let refreshButton = document.getElementById("refresh");
-if (refreshButton) {
-    refreshButton.addEventListener("click", refreshButtonPress);
+let generateButton = document.getElementById("generate");
+if (generateButton) {
+    generateButton.addEventListener("click", generateButtonPress);
 }
 
 main();
