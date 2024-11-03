@@ -289,7 +289,7 @@ function main() {
             for ( let x = 0; x < cellSize; ++ x ) {
 
                 //const val = ImprovedNoise.noise(x/cellSize,y*10/cellSize,z*10/cellSize)
-                const height = (ImprovedNoise.noise(x*5/cellSize,0.5,z*5/cellSize) * (cellSize*0.2)) + (cellSize*0.4)
+                const height = (ImprovedNoise.noise(x*(amplitude/10)/cellSize,0.5,z*(amplitude/10)/cellSize) * (cellSize*0.2)) + (cellSize*0.4)
                 //const height = ( Math.sin( x / cellSize * Math.PI * 2 ) + Math.sin( z / cellSize * Math.PI * 3 ) ) * ( cellSize / 6 ) + ( cellSize / 2 );
                 // if ( val > -0.25 ) {
                 //     world.setVoxel( x, y, z, 1 );
@@ -303,7 +303,7 @@ function main() {
 
     const { positions, normals, indices } = world.generateGeometryDataForCell( 0, 0, 0 );
     const geometry = new THREE.BufferGeometry();
-    const material = new THREE.MeshLambertMaterial( { color: 'green' } );
+    const material = new THREE.MeshLambertMaterial( { color: curColour } );
 
     const positionNumComponents = 3;
     const normalNumComponents = 3;
@@ -398,9 +398,21 @@ function reloadButtonPress () {
     location.reload();
 }
 
+var curColour = "Green";
 //change model colour
 function colourButtonPress () {
-    /* add implementation */
+    if (curColour == "Green") {
+        curColour = "Brown";
+    } else if (curColour == "Brown") {
+        curColour = "Gray";
+    } else if (curColour == "Gray") {
+        curColour = "Purple";
+    } else if (curColour == "Purple"){
+        curColour = "Orange";
+    } else {
+        curColour = "Green";
+    }
+    main();
 }
 
 let generateButton = document.getElementById("generate");
@@ -408,14 +420,14 @@ if (generateButton) {
     generateButton.addEventListener("click", generateButtonPress);
 }
 
-let reloadButton = document.getElementById("reload");
-if (reloadButton) {
-    reloadButton.addEventListener("click", reloadButtonPress);
-}
-
 let colourButton = document.getElementById("colour");
 if (colourButton) {
     colourButton.addEventListener("click", colourButtonPress);
+}
+
+let reloadButton = document.getElementById("reload");
+if (reloadButton) {
+    reloadButton.addEventListener("click", reloadButtonPress);
 }
 
 var reloaded = false;
