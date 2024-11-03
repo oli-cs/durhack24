@@ -142,6 +142,15 @@ h1 {
     height: 100vh;
 }
 
+#minimise {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: black;
+    font-size: 13px;
+    z-index: 1000;
+}
+
 
 /* for mobile screens under 500px - to be implemented */
 @media (max-width: 500px) {
