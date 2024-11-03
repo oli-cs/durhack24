@@ -398,6 +398,11 @@ function reloadButtonPress () {
     location.reload();
 }
 
+//change model colour
+function colourButtonPress () {
+    /* add implementation */
+}
+
 let generateButton = document.getElementById("generate");
 if (generateButton) {
     generateButton.addEventListener("click", generateButtonPress);
@@ -406,6 +411,11 @@ if (generateButton) {
 let reloadButton = document.getElementById("reload");
 if (reloadButton) {
     reloadButton.addEventListener("click", reloadButtonPress);
+}
+
+let colourButton = document.getElementById("colour");
+if (colourButton) {
+    colourButton.addEventListener("click", colourButtonPress);
 }
 
 var reloaded = false;
