@@ -58,6 +58,10 @@ h1 {
     position: relative;
 }
 
+#cheesePortal {
+    border: 0px;
+}
+
 #logo {
     height: 50px;
     width: 50px;

@@ -385,6 +385,11 @@ voxelDensitySlider.oninput = function() {
     voxelDensityOutput.innerHTML = "Voxel Density: " + this.value;
 }
 
+//enter the cheese zone
+function cheeseButtonPress () {
+   
+}
+
 //generate new terrain
 function generateButtonPress () {
     amplitude = Number(amplitudeSlider.value);
@@ -425,6 +430,11 @@ function minimiseButtonPress() {
         document.getElementById("credits").style.display = "none";
         document.getElementById("minimise").innerHTML = "+";
     }
+}
+
+let cheeseButton = document.getElementById("cheesePortal");
+if (cheeseButton) {
+    cheeseButton.addEventListener("click", cheeseButtonPress);
 }
 
 let generateButton = document.getElementById("generate");
