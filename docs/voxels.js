@@ -277,6 +277,7 @@ function main() {
 
     // creates the voxel world
     const world = new VoxelWorld( cellSize );
+    const world2 = new VoxelWorld ( cellSize);
 
     for ( let y = cellSize*0.2; y < cellSize; ++ y ) {
         for ( let z = 0; z < cellSize; ++ z ) {
@@ -289,7 +290,11 @@ function main() {
                 //     world.setVoxel( x, y, z, 1 );
                 // }
                 if (y < height) {
-                    world.setVoxel( x, y, z, 1 );
+                    if (y > cellSize*0.487) {
+                        world2.setVoxel(x, y, z, 1);
+                    } else {
+                        world.setVoxel( x, y, z, 1 );
+                    }
                 }
             }
         }
@@ -309,7 +314,32 @@ function main() {
         new THREE.BufferAttribute( new Float32Array( normals ), normalNumComponents ) );
     geometry.setIndex( indices );
     const mesh = new THREE.Mesh( geometry, material );
-    scene.add( mesh );
+
+
+    //---------
+
+    const { positions2, normals2, indices2 } = world2.generateGeometryDataForCell( 0, 0, 0 );
+    const geometry2 = new THREE.BufferGeometry();
+    const material2 = new THREE.MeshLambertMaterial( { color: 'white' } );
+
+    const positionNumComponents2 = 3;
+    const normalNumComponents2 = 3;
+    geometry2.setAttribute(
+        'position',
+        new THREE.BufferAttribute( new Float32Array( positions2 ), positionNumComponents2 ) );
+    geometry2.setAttribute(
+        'normal',
+        new THREE.BufferAttribute( new Float32Array( normals2 ), normalNumComponents2 ) );
+    geometry2.setIndex( indices2 );
+    const mesh2 = new THREE.Mesh( geometry2, material2 );
+
+    const mesh3 = new THREE.Mesh();
+
+    mesh3.merge(mesh.geo)
+
+    scene.add( mesh3 );
+
+    //--------
 
     function resizeRendererToDisplaySize( renderer ) {
         const canvas = renderer.domElement;
