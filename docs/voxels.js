@@ -420,14 +420,14 @@ if (generateButton) {
     generateButton.addEventListener("click", generateButtonPress);
 }
 
-let reloadButton = document.getElementById("reload");
-if (reloadButton) {
-    reloadButton.addEventListener("click", reloadButtonPress);
-}
-
 let colourButton = document.getElementById("colour");
 if (colourButton) {
     colourButton.addEventListener("click", colourButtonPress);
+}
+
+let reloadButton = document.getElementById("reload");
+if (reloadButton) {
+    reloadButton.addEventListener("click", reloadButtonPress);
 }
 
 var reloaded = false;
