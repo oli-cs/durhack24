@@ -385,7 +385,7 @@ voxelDensitySlider.oninput = function() {
     voxelDensityOutput.innerHTML = "Voxel Density: " + this.value;
 }
 
-//reload the page
+//generate new terrain
 function generateButtonPress () {
     amplitude = Number(amplitudeSlider.value);
     voxelDensity = Number(voxelDensitySlider.value);
@@ -393,9 +393,19 @@ function generateButtonPress () {
     main();
 }
 
+//reload the page
+function reloadButtonPress () {
+    location.reload();
+}
+
 let generateButton = document.getElementById("generate");
 if (generateButton) {
     generateButton.addEventListener("click", generateButtonPress);
+}
+
+let reloadButton = document.getElementById("reload");
+if (reloadButton) {
+    reloadButton.addEventListener("click", reloadButtonPress);
 }
 
 var reloaded = false;
