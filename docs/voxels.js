@@ -289,14 +289,23 @@ function main() {
             for ( let x = 0; x < cellSize; ++ x ) {
 
                 //const val = ImprovedNoise.noise(x/cellSize,y*10/cellSize,z*10/cellSize)
-                const height = (ImprovedNoise.noise(x*(amplitude/10)/cellSize,0.5,z*(amplitude/10)/cellSize) * (cellSize*0.2)) + (cellSize*0.4)
+                var height = 0;
+                if (cheese == 0) {
+                    height = (ImprovedNoise.noise(x*(amplitude/10)/cellSize,0.5,z*(amplitude/10)/cellSize) * (cellSize*0.2)) + (cellSize*0.4)
+                    if (y < height) {
+                        world.setVoxel( x, y, z, 1 );
+                    }
+                } else {
+                    height = (ImprovedNoise.noise(x*10/cellSize,y*10/cellSize,z*10/cellSize))
+                    if (height > -0.25) {
+                        world.setVoxel( x, y, z, 1 );
+                    }
+                }
                 //const height = ( Math.sin( x / cellSize * Math.PI * 2 ) + Math.sin( z / cellSize * Math.PI * 3 ) ) * ( cellSize / 6 ) + ( cellSize / 2 );
                 // if ( val > -0.25 ) {
                 //     world.setVoxel( x, y, z, 1 );
                 // }
-                if (y < height) {
-                    world.setVoxel( x, y, z, 1 );
-                }
+
             }
         }
     }
@@ -385,6 +394,27 @@ voxelDensitySlider.oninput = function() {
     voxelDensityOutput.innerHTML = "Voxel Density: " + this.value;
 }
 
+var cheese = 0;
+//enter the cheese zone
+function cheeseButtonPress () {
+   if (cheese == 0) {
+       cheese = 1;
+       document.getElementById("amplitudeValue").style.display = "none";
+       document.getElementById("amplitudeSlider").style.display = "none";
+       document.getElementById("TerraSpace").innerHTML = "C h e e s e S p a c e";
+       curColour = "Yellow";
+   } else {
+       cheese = 0;
+       document.getElementById("amplitudeValue").style.display = "block";
+       document.getElementById("amplitudeSlider").style.display = "block";
+       document.getElementById("TerraSpace").innerHTML = "T e r r a S p a c e";
+       if (curColour == "Yellow") {
+           curColour = "Green";
+       }
+   }
+   main();
+}
+
 //generate new terrain
 function generateButtonPress () {
     amplitude = Number(amplitudeSlider.value);
@@ -401,7 +431,7 @@ function reloadButtonPress () {
 var curColour = "Green";
 //change model colour
 function colourButtonPress () {
-    if (curColour == "Green") {
+    if (curColour == "Green" || curColour == "Yellow") {
         curColour = "Brown";
     } else if (curColour == "Brown") {
         curColour = "Gray";
@@ -425,6 +455,11 @@ function minimiseButtonPress() {
         document.getElementById("credits").style.display = "none";
         document.getElementById("minimise").innerHTML = "+";
     }
+}
+
+let cheeseButton = document.getElementById("cheesePortal");
+if (cheeseButton) {
+    cheeseButton.addEventListener("click", cheeseButtonPress);
 }
 
 let generateButton = document.getElementById("generate");

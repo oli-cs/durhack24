@@ -16,7 +16,7 @@
     <title>TerraSpace</title>
 </head>
 <body>
-    <h1>T e r r a S p a c e</h1>
+    <h1 id="TerraSpace">T e r r a S p a c e</h1>
 
     <p id="credits">Built by Max, Mayukhi and Oli for DurHack24.</p>
 
@@ -24,12 +24,12 @@
 
     <div id="info">
         <h3><u>Welcome to TerraSpace</u></h3>
-        <p id="desc">A procedural terrain generator built using a combination of 3D voxel-based graphics and Perlin Noise algorithms. <br><br> Adjust the amplitude, voxel density, colour and rotation of this model, and generate new terrain by hitting the 'Reload Model' button.</p>
+        <p id="desc">A procedural terrain generator built using a combination of 3D voxel-based graphics and Perlin Noise algorithms. <br><br> Adjust the amplitude, voxel density, colour and rotation of this model, and generate new terrain by hitting the 'Randomise Model' button.</p>
 
         <table style="width:100%">
             <tr>
               <td id="live_reaction"><p>live cube <br> reaction:</p></td>
-              <td><video autoplay loop muted width="100" height="100" name="spinning cube" id="spinning_cube"><source src="/assets/spinning_cube.mov"/>spinning cube</video></td>
+              <td><button id="cheesePortal"><video autoplay loop muted width="100" height="100" name="spinning cube" id="spinning_cube"><source src="/assets/spinning_cube.mp4"/>spinning cube</video></button></td>
             </tr>
         </table>
 
@@ -46,7 +46,7 @@
     <input type="range" min="1" max="500" value="250" class="slider" id="voxelDensitySlider">
 
     <button id="colour">Change Colour</button>
-    <button id="reload">Reload Model</button>
+    <button id="reload">Randomise Model</button>
 
     <canvas id="c"></canvas>
 </body>
